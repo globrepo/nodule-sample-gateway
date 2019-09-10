@@ -2,9 +2,8 @@ import { GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import { bind } from '@globality/nodule-config';
 
-import { Order } from './order/types';
-
-console.log("order ", Order);
+import OrderMutations from './order/mutations';
+import Order from './order/queries';
 
 
 const QueryType = new GraphQLObjectType({
@@ -19,13 +18,13 @@ const MutationType = new GraphQLObjectType({
     name: 'Mutations',
     description: 'These are the things we can change',
     fields: {
+        ...OrderMutations,
     },
 });
 
 bind('graphql.QueryType', () => QueryType);
 bind('graphql.MutationType', () => MutationType);
-bind('graphql.schema', ({ QueryType, MutationType }) => new GraphQLSchema({
+bind('graphql.schema', () => new GraphQLSchema({
     query: QueryType,
-//    mutation: MutationType, mutation type can't be empty, readd when we have
-//    mutations!
+    mutation: MutationType,
 }));

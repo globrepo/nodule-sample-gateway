@@ -2,15 +2,11 @@ import { createResolver } from '@globality/nodule-graphql';
 import { bind, getContainer } from '@globality/nodule-config';
 
 
-async function aggregate({ id: orderId }, req) {
+async function aggregate({ customerId }, req) {
     const { charmander } = getContainer('services');
 
-    if (!orderId) {
-        return {};
-    }
-
-    return charmander.order.retrieve(req, {
-        orderId,
+    return charmander.order.search(req, {
+        customerId,
     });
 }
 
@@ -19,4 +15,4 @@ const resolver = createResolver({
     mask: (obj, args, context, req) => [args, req],
 });
 
-bind('graphql.resolvers.order.retrieve', () => resolver);
+bind('graphql.resolvers.order.search', () => resolver);
