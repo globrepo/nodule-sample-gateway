@@ -9,6 +9,7 @@ import './resolvers';
 import './resources';
 import './routers';
 import './services';
+import './transforms';
 
 setDefaults('middleware.jwt', {
     realm: 'pikachu',
