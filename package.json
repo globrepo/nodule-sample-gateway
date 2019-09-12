@@ -17,7 +17,7 @@
         "@globality/nodule-graphql": "^0.29.0",
         "@globality/nodule-logging": "^1.5.0",
         "@globality/nodule-memcached": "^0.1.2",
-        "@globality/nodule-openapi": "^0.16.0",
+        "@globality/nodule-openapi": "^0.14.0",
         "apollo-server-core": "^1.4.0",
         "apollo-server-errors": "^2.0.2",
         "aws-sdk": "^2.392.0",
