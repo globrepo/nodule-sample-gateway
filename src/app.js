@@ -1,7 +1,6 @@
 import { getContainer, setDefaults } from '@globality/nodule-config';
 import '@globality/nodule-express';
 import '@globality/nodule-logging';
-import { bindServices } from '@globality/nodule-graphql';
 
 // resolve graph dependencies
 import './clients';
@@ -9,7 +8,6 @@ import './resolvers';
 import './resources';
 import './routers';
 import './services';
-import './transforms';
 
 setDefaults('middleware.jwt', {
     realm: 'pikachu',
@@ -28,7 +26,9 @@ export default function createApp() {
         gqlRouter,
     } = getContainer('routers');
 
-    bindServices();
+    // XXX this relies on internal libraries for instantiating service clients
+    // from swagger specs, which we will defer until later.
+    // bindServices();
     // enable routers
     express.use('/api', apiRouter);
     express.use('/gql', gqlRouter);
