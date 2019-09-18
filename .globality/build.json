@@ -1,0 +1,8 @@
+{
+  "params": {
+    "name": "pikachu",
+    "open_source": true
+  },
+  "type": "node-module",
+  "version": "2019.32.0"
+}
