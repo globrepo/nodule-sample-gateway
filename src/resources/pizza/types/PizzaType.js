@@ -1,12 +1,11 @@
 import {
-    GraphQLFloat,
     GraphQLID,
     GraphQLObjectType,
     GraphQLString,
 } from 'graphql';
-import { getResolver, getResolverPipeline } from '@globality/nodule-graphql';
+import { getResolver } from '@globality/nodule-graphql';
 
-import ToppingListType from '../../topping/types';
+import { ToppingListType } from '../../topping/types';
 
 
 const PizzaType = new GraphQLObjectType({

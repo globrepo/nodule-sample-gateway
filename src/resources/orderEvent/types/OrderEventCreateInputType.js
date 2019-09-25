@@ -1,12 +1,13 @@
 import {
     GraphQLID,
     GraphQLInputObjectType,
+    GraphQLString,
 } from 'graphql';
 
 
-const OrderCreateInputType = new GraphQLInputObjectType({
-    name: 'OrderCreateInputType',
-    description: 'Order create input',
+const OrderEventCreateInputType = new GraphQLInputObjectType({
+    name: 'OrderEventCreateInputType',
+    description: 'Order event create input',
     fields: {
         eventType: {
             type: GraphQLString,
@@ -29,4 +30,4 @@ const OrderCreateInputType = new GraphQLInputObjectType({
     },
 });
 
-export default OrderCreateInputType;
+export default OrderEventCreateInputType;

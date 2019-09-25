@@ -2,10 +2,10 @@ import {
     GraphQLID,
     GraphQLObjectType,
 } from 'graphql';
-import { getResolver, getResolverPipeline } from '@globality/nodule-graphql';
+import { getResolver } from '@globality/nodule-graphql';
 
-import PizzaListType from  '../../pizza/types';
-import OrderEventListType from  '../../orderEvent/types';
+import { PizzaListType } from '../../pizza/types';
+import { OrderEventListType } from '../../orderEvent/types';
 
 
 const OrderType = new GraphQLObjectType({
@@ -23,7 +23,7 @@ const OrderType = new GraphQLObjectType({
         },
         events: {
             type: OrderEventListType,
-            resolver: getResolver('orderEvent.search'),
+            resolve: getResolver('orderEvent.search'),
         },
     },
 });

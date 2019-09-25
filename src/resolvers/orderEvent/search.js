@@ -5,9 +5,9 @@ import { bind, getContainer } from '@globality/nodule-config';
 function mask(obj, args, context, req) {
     if (obj) {
         return [{ orderId: obj.id }, req];
-    } else {
-        return [args, req];
     }
+
+    return [args, req];
 }
 
 async function aggregate({ customerId, orderId }, req) {
@@ -23,5 +23,4 @@ const resolver = createResolver({
     aggregate,
     mask,
 });
-
-bind('graphql.resolvers.order.search', () => resolver);
+bind('graphql.resolvers.orderEvent.search', () => resolver);
