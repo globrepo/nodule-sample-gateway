@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should retrieve a list of pizza for each order 1`] = `
+Object {
+  "data": Object {
+    "order": Object {
+      "items": Array [
+        Object {
+          "customerId": "00000000-0000-0000-0000-111111111111",
+          "id": "00000000-0000-0000-0000-000000000000",
+          "pizzas": Object {
+            "items": Array [
+              Object {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "size": "REGULAR",
+                "toppings": Object {
+                  "items": Array [
+                    Object {
+                      "toppingType": "PEPPERONI",
+                    },
+                  ],
+                },
+              },
+              Object {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "size": "LARGE",
+                "toppings": Object {
+                  "items": Array [
+                    Object {
+                      "toppingType": "PEPPERONI",
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
+}
+`;
