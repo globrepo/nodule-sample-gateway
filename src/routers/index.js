@@ -13,7 +13,7 @@ bind('routers.apiRouter', () => {
 
 bind('routers.gqlRouter', () => {
     const { graphql, graphiql, health } = getContainer('routes');
-    const { logging } = getContainer('middleware');
+    const { jwt, passBasicAuth, logging } = getContainer('middleware');
 
     const router = new Router();
 
@@ -24,6 +24,7 @@ bind('routers.gqlRouter', () => {
     router.use(
         '/graphql',
         logging,
+        jwt,
         parseJson,
         graphql,
     );
@@ -32,6 +33,8 @@ bind('routers.gqlRouter', () => {
         router.use(
             '/graphiql',
             logging,
+            passBasicAuth,
+            jwt,
             parseJson,
             graphiql,
         );
