@@ -1,10 +1,13 @@
 import request from 'supertest';
 import { Nodule } from '@globality/nodule-config';
+import { signSymmetric } from '@globality/nodule-graphql';
 import { mockResponse } from '@globality/nodule-openapi';
 import createApp from '../../../app';
 
 let app;
 
+const email = 'user@globality.com';
+const token = signSymmetric({ email });
 
 beforeEach(async () => {
     await Nodule.testing().fromObject(
@@ -41,6 +44,8 @@ it('should retrieve a list of orders', async () => {
 
     const result = await request(app).post(
         '/gql/graphql',
+    ).set(
+        'Authorization', `Bearer ${token}`,
     ).send({
         query,
     });
@@ -68,6 +73,8 @@ it('should retrieve all orders for customer id', async () => {
 
     const result = await request(app).post(
         '/gql/graphql',
+    ).set(
+        'Authorization', `Bearer ${token}`,
     ).send({
         query,
         variables,

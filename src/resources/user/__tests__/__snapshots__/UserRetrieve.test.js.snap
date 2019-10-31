@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should retrieve a single order 1`] = `
+Object {
+  "data": Object {
+    "user": Object {
+      "items": Array [
+        Object {
+          "email": "user@globality.com",
+          "id": "5fc8f7a7-a590-4e96-adb6-e8dab8303408",
+        },
+      ],
+    },
+  },
+}
+`;

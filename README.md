@@ -14,9 +14,7 @@ team across frontend and backend.
 
 2. Identify the version of `Node.js` to use.
 
-    You can find this version in `build.pikachu/docker-base/Dockerfile.deps`.
-The version in this file represents the version we use in CircleCI and should be
-representative of what version the service is intended to run with..
+As of the writing of this tutorial, the version of node supported with the libraries used here is `10.14.1`.
 
 3. Install Yarn with `brew install yarn`.
 

@@ -2,6 +2,9 @@ import { bind, getContainer } from '@globality/nodule-config';
 import bodyParser from 'body-parser';
 import { Router } from 'express';
 
+// load middleware bound to nodule
+import './middleware';
+
 
 bind('routers.apiRouter', () => {
     const { health } = getContainer('routes');
@@ -13,7 +16,7 @@ bind('routers.apiRouter', () => {
 
 bind('routers.gqlRouter', () => {
     const { graphql, graphiql, health } = getContainer('routes');
-    const { jwt, passBasicAuth, logging } = getContainer('middleware');
+    const { jwt, passBasicAuth, logging, loadUser } = getContainer('middleware');
 
     const router = new Router();
 
@@ -25,6 +28,7 @@ bind('routers.gqlRouter', () => {
         '/graphql',
         logging,
         jwt,
+        loadUser,
         parseJson,
         graphql,
     );
@@ -35,6 +39,7 @@ bind('routers.gqlRouter', () => {
             logging,
             passBasicAuth,
             jwt,
+            loadUser,
             parseJson,
             graphiql,
         );

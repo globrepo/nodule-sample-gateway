@@ -5,7 +5,8 @@ import { bind } from '@globality/nodule-config';
 async function aggregate(req) {
     return {
         items: [{
-            email: req.locals.jwt.Email,
+            id: req.locals.user.id,
+            email: req.locals.user.email,
         }],
     };
 }
