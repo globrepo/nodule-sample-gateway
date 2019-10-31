@@ -4,3 +4,4 @@ import './order';
 import './orderEvent';
 import './pizza';
 import './topping';
+import './user';

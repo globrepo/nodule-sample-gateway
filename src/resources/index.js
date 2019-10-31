@@ -4,6 +4,7 @@ import { bind } from '@globality/nodule-config';
 
 import OrderMutations from './order/mutations';
 import Order from './order/queries';
+import User from './user/queries';
 import OrderEventMutations from './orderEvent/mutations';
 
 
@@ -12,6 +13,7 @@ const QueryType = new GraphQLObjectType({
     description: 'Top-level entry points',
     fields: {
         ...Order,
+        ...User,
     },
 });
 
