@@ -4,6 +4,7 @@ import { bind } from '@globality/nodule-config';
 
 import OrderMutations from './order/mutations';
 import Order from './order/queries';
+import OrderEventMutations from './orderEvent/mutations';
 
 
 const QueryType = new GraphQLObjectType({
@@ -19,6 +20,7 @@ const MutationType = new GraphQLObjectType({
     description: 'These are the things we can change',
     fields: {
         ...OrderMutations,
+        ...OrderEventMutations,
     },
 });
 

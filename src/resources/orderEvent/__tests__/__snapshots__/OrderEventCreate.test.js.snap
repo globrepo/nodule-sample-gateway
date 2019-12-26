@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create an order event 1`] = `
+Object {
+  "data": Object {
+    "orderEventCreate": Object {
+      "eventType": "PizzaCreated",
+      "id": "00000000-0000-0000-0000-000000000000",
+    },
+  },
+}
+`;
