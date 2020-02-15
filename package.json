@@ -31,7 +31,7 @@
         "lodash": "^4.17.2",
         "md5": "^2.2.1",
         "moment": "^2.24.0",
-        "yarn": "^1.12.3"
+        "yarn": "^1.22.0"
     },
     "devDependencies": {
         "apollo": "^2.21.1",
