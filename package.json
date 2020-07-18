@@ -28,7 +28,7 @@
         "graphql-express-persisted-query": "^0.1.2",
         "http-status-codes": "^1.3.0",
         "jest-cli": "^24.9.0",
-        "lodash": "^4.17.2",
+        "lodash": "^4.17.19",
         "md5": "^2.2.1",
         "moment": "^2.24.0",
         "yarn": "^1.12.3"
