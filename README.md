@@ -1,5 +1,9 @@
 # nodule-sample-gateway
 
+# Deprecated
+
+:warning: this repository (like the `nodule-` libraries) is now deprecated. :no_entry:
+
 A sample gateway to showcase the `nodule-` libraries for making gateways in
 `graphql`.
 
